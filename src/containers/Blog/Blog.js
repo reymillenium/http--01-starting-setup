@@ -21,14 +21,20 @@ class Blog extends Component {
     }
 
     render() {
-        
+        const posts = this.state.posts.map(post => {
+            return (
+                <Post
+                    key={post.id}
+                    title={post.title}
+                    content={post.body}
+                />
+            );
+        });
 
         return (
             <div>
                 <section className="Posts">
-                    <Post/>
-                    <Post/>
-                    <Post/>
+                    {posts}
                 </section>
                 <section>
                     <FullPost/>
