@@ -5,6 +5,11 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import axios from 'axios';
 
+// Global axios config:
+axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com';
+axios.defaults.headers.common['Authorization'] = 'AUTH TOKEN';
+axios.defaults.headers.post['Content-Type'] = 'application/json';
+
 const requestInterceptor = axios.interceptors.request.use(requestConfig => {
     console.log(requestConfig);
     // We could also Edit the request configuration before returning the requestConfig (that's the idea behind the interceptor)
@@ -17,7 +22,7 @@ const requestInterceptor = axios.interceptors.request.use(requestConfig => {
     // We still forward it to our response as I wrote it into the component, where wen can handle it again with the catch method
     return Promise.reject(error);
 });
-axios.interceptors.request.eject(requestInterceptor);
+// axios.interceptors.request.eject(requestInterceptor);
 
 const responseInterceptor = axios.interceptors.response.use(successResponse => {
     console.log(successResponse);
@@ -34,7 +39,7 @@ const responseInterceptor = axios.interceptors.response.use(successResponse => {
     // ... but also globally I want to log it into the log file which I send to a server or something like that
     return Promise.reject(error);
 });
-axios.interceptors.request.eject(responseInterceptor);
+// axios.interceptors.request.eject(responseInterceptor);
 
 
 ReactDOM.render(<App/>, document.getElementById('root'));
