@@ -30,7 +30,8 @@ class Blog extends Component {
                 </header>
 
                 {/*<Route path="/" render={()=><h1>Home</h1>}/>*/}
-                <Route path="/" exact={true} render={() => <Posts/>}/>
+                {/*<Route path="/" exact={true} render={() => <Posts/>}/>*/}
+                <Route path="/" exact={true} component={Posts}/>
                 {/*<Posts/>*/}
 
                 {/*<section>*/}
