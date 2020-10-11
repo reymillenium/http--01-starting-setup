@@ -8,7 +8,7 @@ const instance = axios.create({
 instance.defaults.headers.common['Authorization'] = 'AUTH TOKEN FROM INSTANCE';
 
 instance.interceptors.request.use(requestConfig => {
-    console.log(requestConfig);
+    // console.log(requestConfig);
     // We could also Edit the request configuration before returning the requestConfig (that's the idea behind the interceptor)
     // And we could also add headers (example: an authorization header), etc
     return requestConfig;

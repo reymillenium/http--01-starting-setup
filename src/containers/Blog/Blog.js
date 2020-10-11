@@ -23,9 +23,9 @@ class Blog extends Component {
                             {/*<li><a href="/">Home Reloading</a></li>*/}
                             {/*<li><a href="/new-post">New Post Reloading</a></li>*/}
                             <li><Link to="/">Home</Link></li>
-                            <li><Link to="/new-post">New Post</Link></li>
+                            {/*<li><Link to="/new-post">New Post</Link></li>*/}
                             {/* Usage example of the Link */}
-                            {/*<li><Link to={{pathname: '/new-post', hash: '#submit', search: '?quick-submit=true'}}>New Post 2</Link></li>*/}
+                            <li><Link to={{pathname: '/new-post', hash: '#submit', search: '?quick-submit=true'}}>New Post 2</Link></li>
                         </ul>
                     </nav>
                 </header>
