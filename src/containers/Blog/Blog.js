@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Route, Link} from "react-router-dom";
+import {Route, Link, NavLink} from "react-router-dom";
 
 // import FullPost from '../FullPost/FullPost';
 import './Blog.css';
@@ -22,10 +22,29 @@ class Blog extends Component {
                         <ul>
                             {/*<li><a href="/">Home Reloading</a></li>*/}
                             {/*<li><a href="/new-post">New Post Reloading</a></li>*/}
-                            <li><Link to="/">Home</Link></li>
+
+                            {/*<li><Link to="/">Home</Link></li>*/}
                             {/*<li><Link to="/new-post">New Post</Link></li>*/}
-                            {/* Usage example of the Link */}
-                            <li><Link to={{pathname: '/new-post', hash: '#submit', search: '?quick-submit=true'}}>New Post 2</Link></li>
+                            {/* Another usage example of the Link */}
+                            {/*<li><Link to={{pathname: '/new-post', hash: '#submit', search: '?quick-submit=true'}}>New Post 2</Link></li>*/}
+
+                            {/*<li><NavLink to="/">Home</NavLink></li>*/}
+                            {/*<li><NavLink to="/" exact={true}>Home</NavLink></li>*/}
+                            {/* We can define custom active classes instead of the default 'active'*/}
+                            {/*<li><NavLink to="/" exact={true} activeClassName="my-active">Home</NavLink></li>*/}
+                            {/* We can even define our own inline styling for the active link */}
+                            {/*<li><NavLink to="/"*/}
+                            {/*             exact={true}*/}
+                            {/*             activeClassName="my-active"*/}
+                            {/*             activeStyle={{*/}
+                            {/*                 color: '#fa923f',*/}
+                            {/*                 textDecoration: 'underline'*/}
+                            {/*             }}>Home</NavLink></li>*/}
+                            {/* Leave it like this just for reference */}
+                            <li><NavLink to="/" exact={true} activeClassName="active">Home</NavLink></li>
+                            <li><NavLink to="/new-post">New Post</NavLink></li>
+                            {/* Another usage example of the NavLink */}
+                            {/*<li><NavLink to={{pathname: '/new-post', hash: '#submit', search: '?quick-submit=true'}}>New Post 2</NavLink></li>*/}
                         </ul>
                     </nav>
                 </header>
