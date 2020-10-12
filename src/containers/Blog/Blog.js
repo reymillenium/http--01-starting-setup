@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Route, Link, NavLink} from "react-router-dom";
+import {Route, Link, NavLink, Switch} from "react-router-dom";
 
 // import FullPost from '../FullPost/FullPost';
 import './Blog.css';
@@ -52,9 +52,14 @@ class Blog extends Component {
 
                 {/*<Route path="/" render={()=><h1>Home</h1>}/>*/}
                 {/*<Route path="/" exact={true} render={() => <Posts/>}/>*/}
-                <Route path="/" exact={true} component={Posts}/>
-                <Route path="/new-post" exact={true} component={NewPost}/>
-                <Route path="/:id" exact={true} component={FullPost}/>
+
+                {/* Switch allows to render only one of the routes (the 1st that matches) and to
+                 stop analyzing the rest of the routes  */}
+                <Switch>
+                    <Route path="/" exact={true} component={Posts}/>
+                    <Route path="/new-post" exact={true} component={NewPost}/>
+                    <Route path="/:id" exact={true} component={FullPost}/>
+                </Switch>
                 {/*<Posts/>*/}
 
                 {/*<section>*/}
