@@ -58,6 +58,9 @@ class Blog extends Component {
                 <Switch>
                     <Route path="/new-post" component={NewPost}/>
                     <Route path="/posts" component={Posts}/>
+                    {/* Simple way to redirect to posts from root */}
+                    {/*<Route path="/" component={Posts}/>*/}
+                    {/* Moved into the Posts component */}
                     {/*<Route path="/:id" exact={true} component={FullPost}/>*/}
                 </Switch>
                 {/*<Posts/>*/}
