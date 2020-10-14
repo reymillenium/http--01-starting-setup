@@ -1,7 +1,8 @@
 import React, {Component} from "react";
 import axios from "../../../axios";
 // import {Link} from "react-router-dom";
-import {Route, Switch} from 'react-router-dom';
+// import {Route, Switch} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 
 import Post from "../../../components/Post/Post";
 import "./Posts.css";
@@ -16,7 +17,7 @@ class Posts extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props);
+        console.log('Posts.componentDidMount => props = ', this.props);
         // axios.get('https://jsonplaceholder.typicode.com/posts').then(response => {
         axios.get('/posts').then(response => {
             const posts = response.data.slice(0, 4);
@@ -31,7 +32,7 @@ class Posts extends Component {
                 posts: updatedPosts
             });
         }).catch(error => {
-            console.log(error);
+            console.log('FullPost.componentDidMount.get.then.catch => error = ', error);
             // this.setState({
             //     error: true
             // });

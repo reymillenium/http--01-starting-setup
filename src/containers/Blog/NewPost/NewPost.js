@@ -11,7 +11,7 @@ class NewPost extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props);
+        console.log('NewPost.componentDidMount => props = ', this.props);
     }
 
     postDataHandler = () => {
@@ -23,7 +23,7 @@ class NewPost extends Component {
         // axios.post('https://jsonplaceholder.typicode.com/posts/', data)
         axios.post('/posts', data)
             .then(response => {
-                console.log(response);  // Status 201
+                console.log('NewPost.postDataHandler => response = ', response);  // Status 201
             });
     }
 
