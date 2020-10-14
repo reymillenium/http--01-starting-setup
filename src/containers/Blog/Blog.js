@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 import {Route, Link, NavLink, Switch} from "react-router-dom";
 
-// import FullPost from '../FullPost/FullPost';
 import './Blog.css';
 import Posts from './Posts/Posts';
 import NewPost from "./NewPost/NewPost";
-import FullPost from "./FullPost/FullPost";
+// import FullPost from "./FullPost/FullPost";
 
 class Blog extends Component {
     // state = {
@@ -42,7 +41,7 @@ class Blog extends Component {
                             {/*                 textDecoration: 'underline'*/}
                             {/*             }}>Home</NavLink></li>*/}
                             {/* Leave it like this just for reference */}
-                            <li><NavLink to="/" exact={true} activeClassName="active">Home</NavLink></li>
+                            <li><NavLink to="/posts" exact={true} activeClassName="active">Posts</NavLink></li>
                             <li><NavLink to="/new-post">New Post</NavLink></li>
                             {/* Another usage example of the NavLink */}
                             {/*<li><NavLink to={{pathname: '/new-post', hash: '#submit', search: '?quick-submit=true'}}>New Post 2</NavLink></li>*/}
@@ -56,9 +55,9 @@ class Blog extends Component {
                 {/* Switch allows to render only one of the routes (the 1st that matches) and to
                  stop analyzing the rest of the routes  */}
                 <Switch>
-                    <Route path="/" exact={true} component={Posts}/>
-                    <Route path="/new-post" exact={true} component={NewPost}/>
-                    <Route path="/:id" exact={true} component={FullPost}/>
+                    <Route path="/new-post" component={NewPost}/>
+                    <Route path="/posts" component={Posts}/>
+                    {/*<Route path="/:id" exact={true} component={FullPost}/>*/}
                 </Switch>
                 {/*<Posts/>*/}
 

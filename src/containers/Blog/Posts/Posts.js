@@ -1,9 +1,11 @@
 import React, {Component} from "react";
 import axios from "../../../axios";
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
+import {Route, Switch} from 'react-router-dom';
 
 import Post from "../../../components/Post/Post";
 import "./Posts.css";
+import FullPost from "../FullPost/FullPost";
 
 
 class Posts extends Component {
@@ -40,10 +42,11 @@ class Posts extends Component {
         // this.setState({
         //     selectedPostId: id
         // });
-        
+
         // Navigating Programmatically:
-        // this.props.history.push('/' + id);
-        this.props.history.push({pathname: '/' + id});
+        // this.props.history.push({pathname: '/posts/' + id});
+        // this.props.history.push('/posts/' + id);
+        this.props.history.push(this.props.match.url + '/' + id);
     }
 
     render() {
@@ -65,9 +68,12 @@ class Posts extends Component {
         }
 
         return (
-            <section className="Posts">
-                {posts}
-            </section>
+            <div>
+                <section className="Posts">
+                    {posts}
+                </section>
+                <Route path={this.props.match.url + '/:id'} exact={true} component={FullPost}/>
+            </div>
         );
     }
 
