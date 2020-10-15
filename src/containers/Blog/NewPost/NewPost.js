@@ -26,21 +26,28 @@ class NewPost extends Component {
         axios.post('/posts', data)
             .then(response => {
                 console.log('NewPost.postDataHandler => response = ', response);  // Status 201
-                this.setState({
-                    submitted: true
-                });
+                // One ay of redirecting after performing a post of a Post component
+                // this.setState({
+                //     submitted: true
+                // });
+                // Another way of redirecting. Allows to go back on the browser.
+                // this.props.history.push('/posts');
+                // One more way of redirecting. It does not allows to go back on the browser.
+                this.props.history.replace('/posts');
             });
     }
 
     render() {
-        let redirect = null;
-        if (this.state.submitted) {
-            redirect = <Redirect to={"/posts"}/>;
-        }
+        // Sets conditionally the Redirect component:
+        // let redirect = null;
+        // if (this.state.submitted) {
+        //     redirect = <Redirect to={"/posts"}/>;
+        // }
 
         return (
             <div className="NewPost">
-                {redirect}
+                {/* Renders conditionally the Redirect component: */}
+                {/*{redirect}*/}
                 <h1>Add a Post</h1>
                 <label>Title</label>
                 <input type="text" value={this.state.title} onChange={(event) => this.setState({title: event.target.value})}/>
