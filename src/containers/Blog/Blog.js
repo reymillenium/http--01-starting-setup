@@ -64,8 +64,9 @@ class Blog extends Component {
                     {/*<Route path="/" component={Posts}/>*/}
                     {/* Moved into the Posts component */}
                     {/*<Route path="/:id" exact={true} component={FullPost}/>*/}
-                    {/* Another way: */}
-                    <Redirect from={"/"} to={"/posts"}/>
+                    {/* Another way of redirecting: */}
+                    {/*<Redirect from={"/"} to={"/posts"}/>*/}
+                    <Route render={() => <h1>Not found</h1>}/>
                 </Switch>
                 {/*<Posts/>*/}
 
