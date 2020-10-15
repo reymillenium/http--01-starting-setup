@@ -13,6 +13,8 @@ class NewPost extends Component {
     }
 
     componentDidMount() {
+        // Another way to guard a route:
+        // if unauth => this.props.history.replace('/posts');
         console.log('NewPost.componentDidMount => props = ', this.props);
     }
 

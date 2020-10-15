@@ -8,11 +8,12 @@ import NewPost from "./NewPost/NewPost";
 // import FullPost from "./FullPost/FullPost";
 
 class Blog extends Component {
-    // state = {
-    //     posts: [],
-    //     selectedPostId: null,
-    //     error: false
-    // }
+    state = {
+        // posts: [],
+        // selectedPostId: null,
+        // error: false,
+        auth: false
+    }
 
     render() {
 
@@ -56,7 +57,8 @@ class Blog extends Component {
                 {/* Switch allows to render only one of the routes (the 1st that matches) and to
                  stop analyzing the rest of the routes  */}
                 <Switch>
-                    <Route path="/new-post" component={NewPost}/>
+                    {/* One way of implementing a guard for a specific route: */}
+                    {this.state.auth ? <Route path="/new-post" component={NewPost}/> : null}
                     <Route path="/posts" component={Posts}/>
                     {/* Simple way to redirect to posts from root */}
                     {/*<Route path="/" component={Posts}/>*/}
