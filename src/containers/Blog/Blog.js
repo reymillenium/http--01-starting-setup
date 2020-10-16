@@ -60,6 +60,9 @@ class Blog extends Component {
                 {/* Switch allows to render only one of the routes (the 1st that matches) and to
                  stop analyzing the rest of the routes  */}
                 <Switch>
+                    {/*<Route path="/new-post" component={NewPost}/>*/}
+                    {/*<Route path="/posts" component={Posts}/>*/}
+
                     {/* One way of implementing a guard for a specific route: */}
                     {/*{this.state.auth ? <Route path="/new-post" component={NewPost}/> : null}*/}
                     {this.state.auth ? <Route path="/new-post" component={AsyncNewPost}/> : null}

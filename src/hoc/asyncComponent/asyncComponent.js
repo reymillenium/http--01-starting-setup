@@ -9,16 +9,16 @@ const asyncComponent = (importComponent) => {
         componentDidMount() {
             // Executes the provided function that returns a promise:
             importComponent()
-                .then(component => {
+                .then(cmp => {
                     this.setState({
-                        component: component.default
+                        component: cmp.default
                     });
                 });
         }
 
         render() {
-            const comp = this.state.component;
-            return comp ? <comp {...this.props}/> : null;
+            const Comp = this.state.component;
+            return Comp ? <Comp {...this.props} /> : null;
         }
     }
 }
